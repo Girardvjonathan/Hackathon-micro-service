@@ -1,5 +1,5 @@
 # Hackathon-micro-service
-// Fictional Intro
+## Fictional Intro
 
 Following the major event in the tech world (the mega virus deleting most of the code source
 of online shopping site and the quantum supremacy rendering traditional security obselete)
@@ -16,10 +16,12 @@ The application will be separated in theses services:
 * Users services
 * Stores services
 * FrontEnd dispatcher
-* Items services
+* Shopping cart services
 * Monitoring services
 
-You can find information on the requirements inside issues in this repo.
+You can find information on the requirements inside issues in this repo. You will have the responsability to update/upgrade/fix the issues with more specificity (routes, msg, format, etc.) during the day.
+
+You will need to expose a REST API but you can use whatever language you like.
 
 Keep in mind that we only have one day and that the current state of security is
 bad everywhere so we can cut corner (for now).
@@ -30,3 +32,10 @@ snitch to your coworker where is your secret oreo stash :o
 So your call :p
 
 Good luck and may the force be with you!
+
+
+## Good micro-service practice
+* Loose coupling
+* High cohesion
+* Bounded context
+* Event based (message queue)
