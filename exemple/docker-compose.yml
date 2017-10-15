@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db:
+    image: "postgres:9.4"
+    environment:
+     POSTGRES_PASSWORD: event_zoo
+     POSTGRES_USER: postgres
+     POSTGRES_DB: event_zoo
+  web:
+    build: .
+    environment:
+      MIG_ENV: pg-docker
+      DATABASE_URL: postgres://postgres:event_zoo@db:5432/event_zoo
+    ports:
+     - "10010:10010"
+     - "8089:8081"
+    volumes:
+     - .:/usr/src/app
+    depends_on:
+      - db
+    command: ["./entrypoint.sh"]
