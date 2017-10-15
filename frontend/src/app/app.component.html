@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Disshopper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Service call <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="open(content)">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+  <ul class="items-gridview">
+    <li class="item" *ngFor="let item of items">
+      <div class="item-body">
+        <div class="image"></div>
+        <div class="name ellipsis">{{ item.name }}</div>
+      </div>
+      <div class="item-footer">
+        <div class="price">{{ item.price }}</div>
+        <div class="qty">Qty: {{ item.qty }}</div>
+      </div>
+    </li>
+  </ul>
+</div>
