@@ -7,6 +7,10 @@
   background-color: #eee;
 }
 
+.navbar-nav > .nav-item > a {
+  cursor: pointer;
+}
+
 .items-gridview {
   display: flex;
   justify-content: space-between;
@@ -21,8 +25,10 @@
     flex-flow: column;
     width: 150px;
     height: 260px;
-    padding-bottom: 5px;
+    padding-bottom: 5px 5px 5px 0;
     margin: 10px 5px 20px 5px;
+    border-radius: $item-border-radius;
+    border: solid 1px #aaa;
     box-shadow: 0 1px 3px 1px #aaa;
 
     .item-body {
@@ -34,6 +40,7 @@
       .image {
         width: 100%;
         height: 200px;
+        cursor: pointer;
         background-image: url("/assets/150x200.png");
       }
 
@@ -50,6 +57,9 @@
       height: 30px;
       width: 100%;
       padding: 5px;
+      background-color: #666;
+      border-radius: $item-border-radius;
+      color: $primary-text-color;
 
       .price {
         display: flex;

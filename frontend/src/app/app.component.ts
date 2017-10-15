@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  closeResult: string;
+  nCartItems = 2;
   items = [
   	{"name": "vel", "price": "$192.47", "qty": 59},
   	{"name": "Mauris nulla. Integer urna.", "price": "$31.40", "qty": 22},
@@ -109,4 +112,24 @@ export class AppComponent {
   	{"name": "ut dolor", "price": "$253.27", "qty": 48},
   	{"name": "felis. Donec tempor, est", "price": "$43.72", "qty": 42}
   ];
+
+  constructor(private modalService: NgbModal) { }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+    } else {
+        return  `with: ${reason}`;
+    }
+  }
 }
